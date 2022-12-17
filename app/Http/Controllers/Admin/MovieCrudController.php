@@ -39,23 +39,13 @@ class MovieCrudController extends CrudController
             ],
             [    // Select2Multiple = n-n relationship (with pivot table)
                 'label'     => "Genres",
-                'type'      => ($show ? "select": 'select2_multiple'),
+                'type'      => ($show ? "select": 'select_multiple'),
                 'name'      => 'genres', // the method that defines the relationship in your Model
 // optional
                 'entity'    => 'genres', // the method that defines the relationship in your Model
                 'model'     => "App\Models\Genre", // foreign key model
                 'attribute' => 'name', // foreign key attribute that is shown to user
                 'pivot'     => true, // on create&update, do you need to add/delete pivot table entries?
-            ],
-            [
-
-            ],
-            [
-                'label' => "Movie Image",
-                'name' => "image",
-                'type' => 'image',
-                'crop' => true, // set to true to allow cropping, false to disable
-                'aspect_ratio' => 1, // omit or set to 0 to allow any aspect ratio
             ]
         ];
     }
@@ -85,6 +75,7 @@ class MovieCrudController extends CrudController
     {
         $this->crud->set('show.setFromDb', false);
         $this->crud->addColumns($this->getFieldsData(true));
+        CRUD::column('release_year')->type('text');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
