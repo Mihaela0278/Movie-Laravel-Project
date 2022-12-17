@@ -57,6 +57,13 @@ class MovieCrudController extends CrudController
                 'attribute' => 'full_name', // foreign key attribute that is shown to user
                 'pivot'     => true, // on create&update, do you need to add/delete pivot table entries?
             ],
+            [
+                'label' => "Movie Image",
+                'name' => "photo_path",
+                'type' => ($show ? 'view' : 'upload'),
+                'view' => 'partials\image',
+                'upload' => true,
+            ]
         ];
     }
 
@@ -129,5 +136,6 @@ class MovieCrudController extends CrudController
     {
         $this->crud->set('show.setFromDb', false);
         $this->crud->addColumns($this->getFieldsData(true));
+        CRUD::column('release_year')->type('text');
     }
 }

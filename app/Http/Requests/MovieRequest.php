@@ -28,9 +28,9 @@ class MovieRequest extends FormRequest
             'name' => 'required|min:5|max:50',
             'language' => 'required|min:5|max:50',
             'release_year' => 'required|integer|min:1900|max:2050',
+            'photo_path' => 'nullable|max:2048',
             'producers' => 'required',
             'genres' => 'required'
-
         ];
     }
 

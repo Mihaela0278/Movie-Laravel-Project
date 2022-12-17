@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->integer('release_year');
             $table->string('language');
-            $table->string('producer_name');
+            $table->string('photo_path')->nullable();
             $table->timestamps();
         });
     }
