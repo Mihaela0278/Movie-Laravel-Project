@@ -16,11 +16,13 @@ return new class extends Migration
         Schema::create('movie_producers', function (Blueprint $table) {
             $table->foreignId('producer_id')
                 ->constrained('producers')
-                ->onUpdate('cascade');
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
 
             $table->foreignId('movie_id')
                 ->constrained('movies')
-                ->onUpdate('cascade');
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
         });
     }
 
