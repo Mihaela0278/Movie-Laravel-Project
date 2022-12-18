@@ -25,8 +25,8 @@ class MovieRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|min:5|max:50',
-            'language' => 'required|min:5|max:50',
+            'name' => 'required|min:3|max:50',
+            'language' => 'required|min:3|max:50',
             'release_year' => 'required|integer|min:1900|max:2050',
             'photo_path' => 'nullable|max:2048',
             'producers' => 'required',

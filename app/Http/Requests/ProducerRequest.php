@@ -25,8 +25,8 @@ class ProducerRequest extends FormRequest
     public function rules()
     {
         return [
-            'first_name' => 'required|min:5|max:255',
-            'last_name' => 'required|min:5|max:255',
+            'first_name' => 'required|min:3|max:255',
+            'last_name' => 'required|min:3|max:255',
             'date_of_birth' => 'required'
         ];
     }
