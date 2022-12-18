@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\MovieController;
+use App\Models\Movie;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $movies = Movie::all();
+    return view('movies.index', compact('movies'));
 });
 
 Route::middleware([
@@ -26,3 +29,7 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+Route::get('movies/show/{movie}', [MovieController::class, 'show'])->name('movies.show');
+Route::get('movies', [MovieController::class, 'index'])->name('movies.index');
+Route::post('movies/search', [MovieController::class, 'search'])->name('movies.search');
+
