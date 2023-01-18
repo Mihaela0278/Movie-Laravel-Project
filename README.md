@@ -7,8 +7,7 @@
 Състои се от User, Genre, Movie, Producer.
 
 На страница Movies има списък с всички филми, търсачка.
-<p align="center"><img src="Screenshot 2023-01-18 090559.png" /></p>
-<br>
+![img1](Screenshot 2023-01-18 090559.png)
 
 Страница Show съдържа подробна информация за съответния филм.
-<p align="center"><img src="Screenshot 2023-01-18 091019.png" /></p>
+![img2](Screenshot 2023-01-18 091019.png)
